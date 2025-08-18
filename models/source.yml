@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: my_db
+    database: SNOWFLAKE_LEARNING_DB
+    schema: DBT_DKUNDU
+    tables:
+      - name: ORDERS

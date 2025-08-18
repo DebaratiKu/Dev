@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: hub_customer
+    tests:
+      - unique:
+          column_name: customer_hk
+      - not_null:
+          column_name: customer_hk
+  - name: link_customer_order
+    tests:
+      - unique:
+          column_name: customer_hk
+      - not_null:
+          column_name: customer_hk
+      - relationships:
+          to: ref('hub_customer')
+          field: customer_hk
+  - name: sat_customer
+    tests:
+      - not_null:
+          column_name: customer_hk
+      - relationships:
+          to: ref('hub_customer')
+          field: customer_hk
