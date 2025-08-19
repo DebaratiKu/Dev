@@ -8,6 +8,6 @@ WITH source_data AS (
         customer_phone,
         CURRENT_TIMESTAMP() AS load_dts,
         'RAW' AS source
-    FROM {{ ref('raw_customers') }}
+    FROM {{ ref('stg_customers') }}
 )
 SELECT * FROM source_data

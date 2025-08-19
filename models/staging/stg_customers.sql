@@ -1,4 +1,4 @@
-{{ config(materialized='incremental',
+{{ config(materialized='view',
 unique_key='CUSTOMER_HK')}}
 
 WITH source_data AS (

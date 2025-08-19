@@ -15,7 +15,7 @@ models:
       - relationships:
           to: ref('hub_customer')
           field: customer_hk
-  - name: sat_customer
+  - name: sat_customers
     tests:
       - not_null:
           column_name: customer_hk
