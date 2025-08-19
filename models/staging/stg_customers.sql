@@ -1,10 +1,9 @@
-{{ config(materialized='view',
-unique_key='CUSTOMER_HK')}}
+{{ config(materialized='view')}}
 
 WITH source_data AS (
     SELECT
         customer_id AS customer_id,
-        MD5(cast(customer_id as String) AS customer_hk,
+        MD5(customer_id) AS customer_hk,
         CURRENT_TIMESTAMP() AS load_dts,
         'RAW' AS source
     FROM {{ ref('raw_customers') }}
